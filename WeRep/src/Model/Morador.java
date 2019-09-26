@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Álvaro Queiroz
+ * @author Álvaro
  */
 public class Morador {
     private Double saldo;
