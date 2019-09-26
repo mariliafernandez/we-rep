@@ -18,11 +18,13 @@ public class Morador {
     private String email;
     private String login;
     private String senha;
+    private Republica republica;
     
-    public Morador(Double saldo, String nome, String sobreNome) {
+    public Morador(Double saldo, String nome, String sobreNome,Republica republica) {
         this.saldo = saldo;
         this.nome = nome;
         this.sobreNome = sobreNome;
+        this.republica = republica;
     }
     public Morador() {
     }
@@ -75,9 +77,17 @@ public class Morador {
         this.sobreNome = sobreNome;
     }
 
+    public String getRepublica() {
+        return republica;
+    }
+
+    public void setRepublica(Republica republica) {
+        this.republica = republica;
+    }
+    
     @Override
     public String toString() {
-        return "Morador{" + "saldo=" + saldo + ", nome=" + nome + ", sobreNome=" + sobreNome + ", email=" + email + ", login=" + login + ", senha=" + senha + '}';
+        return "Morador{" + "saldo=" + saldo + ", nome=" + nome + ", sobreNome=" + sobreNome + ", email=" + email + ", login=" + login + ", senha=" + senha + ", republica="+ republica +'}';
     }
 
     @Override
@@ -89,6 +99,7 @@ public class Morador {
         hash = 37 * hash + Objects.hashCode(this.email);
         hash = 37 * hash + Objects.hashCode(this.login);
         hash = 37 * hash + Objects.hashCode(this.senha);
+        hash = 37 * hash + Objects.hashCode(this.republica);
         return hash;
     }
 
@@ -120,6 +131,9 @@ public class Morador {
             return false;
         }
         if (!Objects.equals(this.saldo, other.saldo)) {
+            return false;
+        }
+        if (!Objects.equals(this.republica, other.republica)) {
             return false;
         }
         return true;
