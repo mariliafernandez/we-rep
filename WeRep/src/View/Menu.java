@@ -295,7 +295,7 @@ public class Menu extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         try {
-
+             /*
             CadastroMorador cadastroMorador = new CadastroMorador(mor);
             cadastroMorador.setVisible(true);
             CadastroMorador.btnCadastrarConta.setVisible(false);
@@ -314,7 +314,7 @@ public class Menu extends javax.swing.JFrame {
             CadastroMorador.jtfEmail.setText(usuario.getEmail());
             CadastroMorador.jtfLogin.setText(usuario.getLogin());
             CadastroMorador.jtfSenha.setText(usuario.getSenha());
-
+            */
         } catch (Exception ex) {
             System.out.println("Erro: " + ex.getMessage());
             ex.printStackTrace();
