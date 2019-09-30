@@ -3,28 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
-
-import controller.MoradorController;
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import model.Morador;
+package View;
 
 /**
  *
- * @author Isabela Nunes
+ * @author Angelo
  */
 public class Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form Login
+     * Creates new form Login1
      */
     public Login() {
         initComponents();
-        setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon(getClass().getResource("/imagens/repme.png")).getImage());
-
     }
 
     /**
@@ -46,17 +37,11 @@ public class Login extends javax.swing.JFrame {
         jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRoundBackground();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
-        setForeground(new java.awt.Color(255, 255, 255));
-        setResizable(false);
-        setSize(new java.awt.Dimension(750, 530));
-        getContentPane().setLayout(null);
 
         panelImage2.setBackground(new java.awt.Color(255, 0, 0));
         panelImage2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bg.png"))); // NOI18N
+        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/bg2.png"))); // NOI18N
         panelImage2.setMinimumSize(new java.awt.Dimension(630, 450));
-        panelImage2.setPreferredSize(new java.awt.Dimension(630, 450));
         panelImage2.setLayout(null);
 
         jtfLogin.setForeground(new java.awt.Color(153, 153, 153));
@@ -109,30 +94,25 @@ public class Login extends javax.swing.JFrame {
         panelImage2.add(jtfSenha);
         jtfSenha.setBounds(320, 280, 170, 30);
 
-        getContentPane().add(panelImage2);
-        panelImage2.setBounds(0, 0, 750, 530);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panelImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
-        // TODO add your handling code here:
-        CadastroUsuario cadastroMorador = new CadastroUsuario(null);
-        cadastroMorador.setVisible(true);
-        CadastroUsuario.btnCadastrarConta.setVisible(false);
-        CadastroUsuario.btnConsultarConta.setVisible(false);
-        CadastroUsuario.btnConsultarSaldo.setVisible(false);
-        CadastroUsuario.labelSaldo.setVisible(false);
-        CadastroUsuario.jtfSaldo.setVisible(false);
-        CadastroUsuario.jlblLogin.setVisible(true);
-        CadastroUsuario.jlblSenha.setVisible(true);
-        CadastroUsuario.jtfLogin.setVisible(true);
-        CadastroUsuario.jtfSenha.setVisible(true);
-        CadastroUsuario.btnCadastrar.setVisible(true);
-        CadastroUsuario.btnAlterar.setVisible(false);
-        CadastroUsuario.btnCadastrar.setBackground(new Color(102, 255, 102));
-        CadastroUsuario.btnCadastrar.setText("CADASTRAR");
-    }//GEN-LAST:event_buttonRound1ActionPerformed
 
     private void jBtnAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAcessoActionPerformed
         // TODO add your handling code here:
@@ -164,8 +144,26 @@ public class Login extends javax.swing.JFrame {
 
         };
 
-
     }//GEN-LAST:event_jBtnAcessoActionPerformed
+
+    private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
+        // TODO add your handling code here:
+        CadastroUsuario cadastroMorador = new CadastroUsuario(null);
+        cadastroMorador.setVisible(true);
+        CadastroUsuario.btnCadastrarConta.setVisible(false);
+        CadastroUsuario.btnConsultarConta.setVisible(false);
+        CadastroUsuario.btnConsultarSaldo.setVisible(false);
+        CadastroUsuario.labelSaldo.setVisible(false);
+        CadastroUsuario.jtfSaldo.setVisible(false);
+        CadastroUsuario.jlblLogin.setVisible(true);
+        CadastroUsuario.jlblSenha.setVisible(true);
+        CadastroUsuario.jtfLogin.setVisible(true);
+        CadastroUsuario.jtfSenha.setVisible(true);
+        CadastroUsuario.btnCadastrar.setVisible(true);
+        CadastroUsuario.btnAlterar.setVisible(false);
+        CadastroUsuario.btnCadastrar.setBackground(new Color(102, 255, 102));
+        CadastroUsuario.btnCadastrar.setText("CADASTRAR");
+    }//GEN-LAST:event_buttonRound1ActionPerformed
 
     private void jtfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSenhaActionPerformed
         // TODO add your handling code here:
@@ -196,6 +194,7 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
