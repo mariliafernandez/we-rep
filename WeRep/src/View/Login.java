@@ -40,7 +40,7 @@ public class Login extends javax.swing.JFrame {
 
         panelImage2.setBackground(new java.awt.Color(255, 0, 0));
         panelImage2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/bg2.png"))); // NOI18N
+        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/bg.png"))); // NOI18N
         panelImage2.setMinimumSize(new java.awt.Dimension(630, 450));
         panelImage2.setLayout(null);
 
@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         panelImage2.add(jBtnAcesso);
-        jBtnAcesso.setBounds(290, 360, 170, 40);
+        jBtnAcesso.setBounds(290, 330, 170, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/password2.png"))); // NOI18N
         panelImage2.add(jLabel1);
@@ -79,7 +79,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         panelImage2.add(buttonRound1);
-        buttonRound1.setBounds(220, 420, 300, 20);
+        buttonRound1.setBounds(230, 390, 300, 20);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Anotação 2019-09-28 092152.png"))); // NOI18N
         panelImage2.add(jLabel3);
