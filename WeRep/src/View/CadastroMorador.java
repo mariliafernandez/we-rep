@@ -52,15 +52,15 @@ public class CadastroMorador extends javax.swing.JFrame {
         jlblUser5 = new javax.swing.JLabel();
         jtfSaldo = new org.edisoncor.gui.textField.TextFieldRectBackground();
         labelSaldo = new org.edisoncor.gui.label.LabelHeader();
-        jtfSobrenome = new org.edisoncor.gui.textField.TextFieldRectBackground();
         jlblLogin = new javax.swing.JLabel();
         jtfLogin = new org.edisoncor.gui.textField.TextFieldRectBackground();
         jlblSenha = new javax.swing.JLabel();
-        jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRectBackground();
         jtfNome = new org.edisoncor.gui.textField.TextFieldRectBackground();
         btnAlterar = new org.edisoncor.gui.button.ButtonAeroRound();
         labelSaldo1 = new org.edisoncor.gui.label.LabelHeader();
         jtfSobrenome1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
+        jtfSenha1 = new org.edisoncor.gui.passwordField.PasswordFieldRectBackground();
+        jtfRepublica = new org.edisoncor.gui.textField.TextFieldRectBackground();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -122,15 +122,6 @@ public class CadastroMorador extends javax.swing.JFrame {
         panelNice5.add(labelSaldo);
         labelSaldo.setBounds(310, 260, 140, 40);
 
-        jtfSobrenome.setDescripcion("República");
-        jtfSobrenome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfSobrenomeActionPerformed(evt);
-            }
-        });
-        panelNice5.add(jtfSobrenome);
-        jtfSobrenome.setBounds(270, 300, 230, 40);
-
         jlblLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlblLogin.setText("LOGIN");
         panelNice5.add(jlblLogin);
@@ -144,10 +135,6 @@ public class CadastroMorador extends javax.swing.JFrame {
         jlblSenha.setText("SENHA");
         panelNice5.add(jlblSenha);
         jlblSenha.setBounds(300, 180, 80, 30);
-
-        jtfSenha.setDescripcion("Informe a senha");
-        panelNice5.add(jtfSenha);
-        jtfSenha.setBounds(300, 210, 170, 40);
 
         jtfNome.setDescripcion("Primeiro nome");
         panelNice5.add(jtfNome);
@@ -171,6 +158,14 @@ public class CadastroMorador extends javax.swing.JFrame {
         jtfSobrenome1.setDescripcion("Sobrenome");
         panelNice5.add(jtfSobrenome1);
         jtfSobrenome1.setBounds(240, 70, 230, 40);
+
+        jtfSenha1.setDescripcion("Informe a senha");
+        panelNice5.add(jtfSenha1);
+        jtfSenha1.setBounds(300, 210, 170, 40);
+
+        jtfRepublica.setDescripcion("Republica");
+        panelNice5.add(jtfRepublica);
+        jtfRepublica.setBounds(300, 300, 160, 40);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -215,10 +210,6 @@ public class CadastroMorador extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
     }//GEN-LAST:event_btnAlterarActionPerformed
-
-    private void jtfSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSobrenomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfSobrenomeActionPerformed
 
     
     /**
@@ -267,9 +258,9 @@ public class CadastroMorador extends javax.swing.JFrame {
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfEmail;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfLogin;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfNome;
+    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfRepublica;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSaldo;
-    public static org.edisoncor.gui.passwordField.PasswordFieldRectBackground jtfSenha;
-    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome;
+    public static org.edisoncor.gui.passwordField.PasswordFieldRectBackground jtfSenha1;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome1;
     private org.edisoncor.gui.label.LabelRound labelRound1;
     public static org.edisoncor.gui.label.LabelHeader labelSaldo;
