@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package View;
+
 
 import java.awt.Color;
 import java.util.GregorianCalendar;
 import java.util.List;
 import javax.swing.ImageIcon;
 
+
 /**
  *
  * @author Isabela Nunes
  */
 public class Menu extends javax.swing.JFrame {
-
 
     /**
      * Creates new form Menu
@@ -24,11 +25,11 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         saudacao();
         setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon(getClass().getResource("/View.Imagens/Anotação 2019-09-28 092152.png")).getImage());
+        this.setIconImage(new ImageIcon(getClass().getResource("/imagens/repme.png")).getImage());
         
     }
 
-
+   
 
     public String getHora() {
         // cria um StringBuilder
@@ -77,11 +78,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jlblSaldo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnCadastrarConta = new javax.swing.JLabel();
-        btnConsultarSaldo = new javax.swing.JLabel();
-        btnConsultarConta = new javax.swing.JLabel();
+        btnCadastrarRep = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         clockFace1 = new org.edisoncor.gui.varios.ClockFace();
+        buttonTransluceIcon1 = new org.edisoncor.gui.button.ButtonTransluceIcon();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -136,35 +136,15 @@ public class Menu extends javax.swing.JFrame {
         panelNice5.add(jLabel3);
         jLabel3.setBounds(40, 150, 40, 40);
 
-        btnCadastrarConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/calculator.png"))); // NOI18N
-        btnCadastrarConta.setText("Cadastrar Conta");
-        btnCadastrarConta.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCadastrarRep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/house.png"))); // NOI18N
+        btnCadastrarRep.setText("Republica");
+        btnCadastrarRep.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCadastrarContaMouseClicked(evt);
+                btnCadastrarRepMouseClicked(evt);
             }
         });
-        panelNice5.add(btnCadastrarConta);
-        btnCadastrarConta.setBounds(40, 220, 150, 50);
-
-        btnConsultarSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/money.png"))); // NOI18N
-        btnConsultarSaldo.setText("Consultar Saldos");
-        btnConsultarSaldo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnConsultarSaldoMouseClicked(evt);
-            }
-        });
-        panelNice5.add(btnConsultarSaldo);
-        btnConsultarSaldo.setBounds(210, 230, 140, 40);
-
-        btnConsultarConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/searchCount.png"))); // NOI18N
-        btnConsultarConta.setText(" Consultar Contas");
-        btnConsultarConta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnConsultarContaMouseClicked(evt);
-            }
-        });
-        panelNice5.add(btnConsultarConta);
-        btnConsultarConta.setBounds(390, 230, 140, 40);
+        panelNice5.add(btnCadastrarRep);
+        btnCadastrarRep.setBounds(40, 220, 100, 50);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("SALDO");
@@ -172,6 +152,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setBounds(80, 140, 70, 30);
         panelNice5.add(clockFace1);
         clockFace1.setBounds(370, 40, 150, 150);
+
+        buttonTransluceIcon1.setText("buttonTransluceIcon1");
+        panelNice5.add(buttonTransluceIcon1);
+        buttonTransluceIcon1.setBounds(20, 225, 185, 40);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -204,17 +188,16 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCadastrarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarContaMouseClicked
-    }//GEN-LAST:event_btnCadastrarContaMouseClicked
+    private void btnCadastrarRepMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarRepMouseClicked
 
-    private void btnConsultarSaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarSaldoMouseClicked
-    }//GEN-LAST:event_btnConsultarSaldoMouseClicked
+      
 
-    private void btnConsultarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarContaMouseClicked
-    }//GEN-LAST:event_btnConsultarContaMouseClicked
-
+    }//GEN-LAST:event_btnCadastrarRepMouseClicked
+   void setSaldo(){
+      
+   }
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-   
+       
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
@@ -253,9 +236,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnCadastrarConta;
-    private javax.swing.JLabel btnConsultarConta;
-    private javax.swing.JLabel btnConsultarSaldo;
+    private javax.swing.JLabel btnCadastrarRep;
+    private org.edisoncor.gui.button.ButtonTransluceIcon buttonTransluceIcon1;
     private org.edisoncor.gui.varios.ClockFace clockFace1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -9,18 +9,13 @@ package View;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import model.Morador;
-import view.Menu;
-import view.Menu;
+
 
 /**
  *
  * @author Isabela Nunes
  */
 public class CadastroMorador extends javax.swing.JFrame {
-
-    Morador mor = new Morador();
-    Morador usuario = new Morador();
 
     /**
      * Creates new form CadastroMorador
