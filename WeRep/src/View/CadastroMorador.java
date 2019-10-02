@@ -53,9 +53,9 @@ public class CadastroMorador extends javax.swing.JFrame {
         jtfNome = new org.edisoncor.gui.textField.TextFieldRectBackground();
         btnAlterar = new org.edisoncor.gui.button.ButtonAeroRound();
         labelSaldo1 = new org.edisoncor.gui.label.LabelHeader();
-        jtfSobrenome1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
         jtfSenha1 = new org.edisoncor.gui.passwordField.PasswordFieldRectBackground();
-        jtfRepublica = new org.edisoncor.gui.textField.TextFieldRectBackground();
+        jtfSobrenome2 = new org.edisoncor.gui.textField.TextFieldRectBackground();
+        comboBoxRect2 = new org.edisoncor.gui.comboBox.ComboBoxRect();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -93,7 +93,7 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(btnCadastrar);
-        btnCadastrar.setBounds(180, 350, 170, 40);
+        btnCadastrar.setBounds(180, 360, 170, 40);
 
         jtfEmail.setDescripcion("ex: usuario@gmail.com");
         panelNice5.add(jtfEmail);
@@ -111,11 +111,11 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(jtfSaldo);
-        jtfSaldo.setBounds(60, 300, 160, 40);
+        jtfSaldo.setBounds(70, 310, 140, 40);
 
         labelSaldo.setText("REPÚBLICA");
         panelNice5.add(labelSaldo);
-        labelSaldo.setBounds(310, 260, 140, 40);
+        labelSaldo.setBounds(310, 270, 140, 40);
 
         jlblLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlblLogin.setText("LOGIN");
@@ -144,23 +144,21 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(btnAlterar);
-        btnAlterar.setBounds(180, 350, 170, 40);
+        btnAlterar.setBounds(180, 360, 170, 40);
 
         labelSaldo1.setText("SALDO");
         panelNice5.add(labelSaldo1);
-        labelSaldo1.setBounds(70, 260, 140, 40);
-
-        jtfSobrenome1.setDescripcion("Sobrenome");
-        panelNice5.add(jtfSobrenome1);
-        jtfSobrenome1.setBounds(240, 70, 230, 40);
+        labelSaldo1.setBounds(70, 270, 140, 40);
 
         jtfSenha1.setDescripcion("Informe a senha");
         panelNice5.add(jtfSenha1);
         jtfSenha1.setBounds(300, 210, 170, 40);
 
-        jtfRepublica.setDescripcion("Republica");
-        panelNice5.add(jtfRepublica);
-        jtfRepublica.setBounds(300, 300, 160, 40);
+        jtfSobrenome2.setDescripcion("Sobrenome");
+        panelNice5.add(jtfSobrenome2);
+        jtfSobrenome2.setBounds(240, 70, 230, 40);
+        panelNice5.add(comboBoxRect2);
+        comboBoxRect2.setBounds(310, 320, 140, 20);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -168,15 +166,15 @@ public class CadastroMorador extends javax.swing.JFrame {
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImage1Layout.createSequentialGroup()
                 .addGap(107, 107, 107)
-                .addComponent(panelNice5, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addComponent(panelNice5, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         panelImage1Layout.setVerticalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelImage1Layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(panelNice5, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(panelNice5, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -246,6 +244,7 @@ public class CadastroMorador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static org.edisoncor.gui.button.ButtonAeroRound btnAlterar;
     public static org.edisoncor.gui.button.ButtonAeroRound btnCadastrar;
+    private org.edisoncor.gui.comboBox.ComboBoxRect comboBoxRect2;
     public static javax.swing.JLabel jlblLogin;
     public static javax.swing.JLabel jlblSenha;
     private javax.swing.JLabel jlblUser2;
@@ -253,10 +252,9 @@ public class CadastroMorador extends javax.swing.JFrame {
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfEmail;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfLogin;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfNome;
-    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfRepublica;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSaldo;
     public static org.edisoncor.gui.passwordField.PasswordFieldRectBackground jtfSenha1;
-    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome1;
+    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome2;
     private org.edisoncor.gui.label.LabelRound labelRound1;
     public static org.edisoncor.gui.label.LabelHeader labelSaldo;
     public static org.edisoncor.gui.label.LabelHeader labelSaldo1;
