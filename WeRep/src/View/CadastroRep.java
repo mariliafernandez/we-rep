@@ -5,7 +5,7 @@
  */
 package view;
 
-import View.Menu;
+
 
 /**
  *
@@ -293,34 +293,6 @@ public class CadastroRep extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfEstadoActionPerformed
 
     private void jBtnCadastrarRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarRepActionPerformed
-        // TODO add your handling code here:
-
-        Morador morador = new Morador();
-
-        morador.setLogin(jtfLogin.getText());
-        morador.setSenha(jtfSenha.getText());
-        Morador usuario = new Morador();
-
-        try {
-            MoradorController moradorController = new MoradorController();
-
-            usuario = moradorController.login(morador);
-            Menu menu = new Menu(usuario);
-            menu.setVisible(true);
-            this.dispose();
-
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-
-        if (usuario != null) {
-            System.out.println(usuario.getNome());
-        } else {
-
-            System.out.print("Login ou senha não são válidos");
-
-        };
 
     }//GEN-LAST:event_jBtnCadastrarRepActionPerformed
 

@@ -145,23 +145,6 @@ public class MenuRep extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarRepActionPerformed
-        mor = new Morador();
-        mor.setNome(jtfNome.getText());
-        mor.setSobreNome(jtfSobrenome.getText());
-        mor.setEmail(jtfEmail.getText());
-        mor.setLogin(jtfLogin.getText());
-        mor.setSenha(jtfSenha.getText());
-        mor.setSaldo(new Double(0));
-        try {
-            MoradorController moradorController = new MoradorController();
-            moradorController.addMorador(mor);
-            JOptionPane.showMessageDialog(null,"Cadastro realizado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
-            this.dispose();
-
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
     }//GEN-LAST:event_btnEntrarRepActionPerformed
 
     private void btnCadastrarRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarRepActionPerformed

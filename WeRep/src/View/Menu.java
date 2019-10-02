@@ -5,16 +5,10 @@
  */
 package view;
 
-//import controller.CompartilhadoController;
-import controller.MoradorController;
-//import controller.PessoalController;
 import java.awt.Color;
 import java.util.GregorianCalendar;
 import java.util.List;
 import javax.swing.ImageIcon;
-//import model.Compartilhado;
-//import model.Conta;
-import model.Morador;
 
 /**
  *
@@ -22,25 +16,19 @@ import model.Morador;
  */
 public class Menu extends javax.swing.JFrame {
 
-    Morador usuario = new Morador();
 
     /**
      * Creates new form Menu
      */
-    public Menu(Morador mor) {
+    public Menu() {
         initComponents();
-        jLblNome.setText(mor.getNome() + "!");
-        jlblSaldo.setText("R$ " + Double.toString(mor.getSaldo()));
         saudacao();
-        usuario = mor;
-        setSaldo();
         setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon(getClass().getResource("/imagens/repme.png")).getImage());
+        this.setIconImage(new ImageIcon(getClass().getResource("/View.Imagens/Anotação 2019-09-28 092152.png")).getImage());
         
     }
 
-    Menu() {
-    }
+
 
     public String getHora() {
         // cria um StringBuilder
@@ -217,108 +205,16 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarContaMouseClicked
-
-        Morador mor = new Morador();
-        try {
-
-            mor = MoradorController.login(usuario);
-           // CadastrarConta cadastrarConta = new CadastrarConta(mor);
-            //cadastrarConta.setVisible(true);
-            this.dispose();
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-
     }//GEN-LAST:event_btnCadastrarContaMouseClicked
 
     private void btnConsultarSaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarSaldoMouseClicked
-        // TODO add your handling code here:
-        Morador mor = new Morador();
-        try {
-            MoradorController moradorController = new MoradorController();
-
-            //mor = moradorController.login(usuario);
-            //ConsultarSaldos consultarSaldos = new ConsultarSaldos(mor);
-           // consultarSaldos.setVisible(true);
-            this.dispose();
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-
     }//GEN-LAST:event_btnConsultarSaldoMouseClicked
 
     private void btnConsultarContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarContaMouseClicked
-        // TODO add your handling code here:
-        Morador mor = new Morador();
-        try {
-            MoradorController moradorController = new MoradorController();
-
-           // mor = moradorController.login(usuario);
-           // ConsultarConta consultarConta = new ConsultarConta(mor);
-           // consultarConta.setVisible(true);
-            this.dispose();
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-
     }//GEN-LAST:event_btnConsultarContaMouseClicked
-   void setSaldo(){
-       
-       List<Object> moradores =  MoradorController.selectMoradors();
-        
-            Double saldoTotal = new Double(0);
-            for (Object object : moradores) {
-                Morador morador = (Morador) object;
-                if(!morador.getLogin().equals(usuario.getLogin())){         
-                    Double saldo = CompartilhadoController.remanejarUsuario(usuario.getLogin(), morador.getLogin()) - CompartilhadoController.remanejarUsuario( morador.getLogin(),usuario.getLogin());
-                    saldoTotal += saldo;
-                }
-            }
-            List<Object> contas = PessoalController.selectContaPessoal(usuario);
-            for (Object object : contas) {
-                Conta conta = (Conta) object;   
-                saldoTotal -= conta.getValor();
-             }
-            jlblSaldo.setText(  String.format( "%.2f", saldoTotal) );
-   }
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Morador mor = new Morador();
-        try {
-            MoradorController moradorController = new MoradorController();
 
-            mor = moradorController.login(usuario);
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-        try {
-             /*
-            CadastroMorador cadastroMorador = new CadastroMorador(mor);
-            cadastroMorador.setVisible(true);
-            CadastroMorador.btnCadastrarConta.setVisible(false);
-            CadastroMorador.btnConsultarConta.setVisible(false);
-            CadastroMorador.btnConsultarSaldo.setVisible(false);
-            CadastroMorador.labelSaldo.setVisible(false);
-            CadastroMorador.jtfSaldo.setVisible(false);
-            CadastroMorador.jlblLogin.setVisible(true);
-            CadastroMorador.jlblSenha.setVisible(true);
-            CadastroMorador.jtfLogin.setVisible(true);
-            CadastroMorador.jtfSenha.setVisible(true);
-            CadastroMorador.btnCadastrar.setVisible(false);
-            CadastroMorador.btnAlterar.setVisible(true);
-            CadastroMorador.jtfNome.setText(usuario.getNome());
-            CadastroMorador.jtfSobrenome.setText(usuario.getSobreNome());
-            CadastroMorador.jtfEmail.setText(usuario.getEmail());
-            CadastroMorador.jtfLogin.setText(usuario.getLogin());
-            CadastroMorador.jtfSenha.setText(usuario.getSenha());
-            */
-        } catch (Exception ex) {
-            System.out.println("Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+   
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**

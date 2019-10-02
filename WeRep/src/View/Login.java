@@ -115,54 +115,10 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAcessoActionPerformed
-        // TODO add your handling code here:
-
-        Morador morador = new Morador();
-
-        morador.setLogin(jtfLogin.getText());
-        morador.setSenha(jtfSenha.getText());
-        Morador usuario = new Morador();
-
-        try {
-            MoradorController moradorController = new MoradorController();
-
-            usuario = moradorController.login(morador);
-            Menu menu = new Menu(usuario);
-            menu.setVisible(true);
-            this.dispose();
-
-        } catch (Exception ex) {
-            System.out.println("Problemas ao cadastrar Pessoa na View!  Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
-
-        if (usuario != null) {
-            System.out.println(usuario.getNome());
-        } else {
-
-            System.out.print("Login ou senha não são válidos");
-
-        };
-
+ 
     }//GEN-LAST:event_jBtnAcessoActionPerformed
 
     private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
-        // TODO add your handling code here:
-        CadastroUsuario cadastroMorador = new CadastroUsuario(null);
-        cadastroMorador.setVisible(true);
-        CadastroUsuario.btnCadastrarConta.setVisible(false);
-        CadastroUsuario.btnConsultarConta.setVisible(false);
-        CadastroUsuario.btnConsultarSaldo.setVisible(false);
-        CadastroUsuario.labelSaldo.setVisible(false);
-        CadastroUsuario.jtfSaldo.setVisible(false);
-        CadastroUsuario.jlblLogin.setVisible(true);
-        CadastroUsuario.jlblSenha.setVisible(true);
-        CadastroUsuario.jtfLogin.setVisible(true);
-        CadastroUsuario.jtfSenha.setVisible(true);
-        CadastroUsuario.btnCadastrar.setVisible(true);
-        CadastroUsuario.btnAlterar.setVisible(false);
-        CadastroUsuario.btnCadastrar.setBackground(new Color(102, 255, 102));
-        CadastroUsuario.btnCadastrar.setText("CADASTRAR");
     }//GEN-LAST:event_buttonRound1ActionPerformed
 
     private void jtfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSenhaActionPerformed
