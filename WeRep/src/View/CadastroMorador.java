@@ -59,6 +59,8 @@ public class CadastroMorador extends javax.swing.JFrame {
         jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRectBackground();
         jtfNome = new org.edisoncor.gui.textField.TextFieldRectBackground();
         btnAlterar = new org.edisoncor.gui.button.ButtonAeroRound();
+        labelSaldo1 = new org.edisoncor.gui.label.LabelHeader();
+        jtfSobrenome1 = new org.edisoncor.gui.textField.TextFieldRectBackground();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -96,16 +98,16 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(btnCadastrar);
-        btnCadastrar.setBounds(190, 340, 170, 40);
+        btnCadastrar.setBounds(180, 350, 170, 40);
 
         jtfEmail.setDescripcion("ex: usuario@gmail.com");
         panelNice5.add(jtfEmail);
-        jtfEmail.setBounds(60, 150, 420, 40);
+        jtfEmail.setBounds(60, 140, 420, 40);
 
         jlblUser5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlblUser5.setText("E-MAIL");
         panelNice5.add(jlblUser5);
-        jlblUser5.setBounds(60, 120, 120, 30);
+        jlblUser5.setBounds(60, 110, 120, 30);
 
         jtfSaldo.setDescripcion("R$ 00,00");
         jtfSaldo.addActionListener(new java.awt.event.ActionListener() {
@@ -114,33 +116,38 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(jtfSaldo);
-        jtfSaldo.setBounds(310, 290, 150, 40);
+        jtfSaldo.setBounds(60, 300, 160, 40);
 
-        labelSaldo.setText("SALDO");
+        labelSaldo.setText("REPÚBLICA");
         panelNice5.add(labelSaldo);
-        labelSaldo.setBounds(60, 290, 140, 40);
+        labelSaldo.setBounds(310, 260, 140, 40);
 
-        jtfSobrenome.setDescripcion("Sobrenome");
+        jtfSobrenome.setDescripcion("República");
+        jtfSobrenome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfSobrenomeActionPerformed(evt);
+            }
+        });
         panelNice5.add(jtfSobrenome);
-        jtfSobrenome.setBounds(240, 70, 230, 40);
+        jtfSobrenome.setBounds(270, 300, 230, 40);
 
         jlblLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlblLogin.setText("LOGIN");
         panelNice5.add(jlblLogin);
-        jlblLogin.setBounds(60, 200, 80, 30);
+        jlblLogin.setBounds(60, 180, 80, 30);
 
         jtfLogin.setDescripcion("Insira o login");
         panelNice5.add(jtfLogin);
-        jtfLogin.setBounds(60, 230, 180, 40);
+        jtfLogin.setBounds(60, 210, 180, 40);
 
         jlblSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jlblSenha.setText("SENHA");
         panelNice5.add(jlblSenha);
-        jlblSenha.setBounds(300, 200, 80, 30);
+        jlblSenha.setBounds(300, 180, 80, 30);
 
         jtfSenha.setDescripcion("Informe a senha");
         panelNice5.add(jtfSenha);
-        jtfSenha.setBounds(300, 230, 170, 40);
+        jtfSenha.setBounds(300, 210, 170, 40);
 
         jtfNome.setDescripcion("Primeiro nome");
         panelNice5.add(jtfNome);
@@ -155,7 +162,15 @@ public class CadastroMorador extends javax.swing.JFrame {
             }
         });
         panelNice5.add(btnAlterar);
-        btnAlterar.setBounds(190, 340, 170, 40);
+        btnAlterar.setBounds(180, 350, 170, 40);
+
+        labelSaldo1.setText("SALDO");
+        panelNice5.add(labelSaldo1);
+        labelSaldo1.setBounds(70, 260, 140, 40);
+
+        jtfSobrenome1.setDescripcion("Sobrenome");
+        panelNice5.add(jtfSobrenome1);
+        jtfSobrenome1.setBounds(240, 70, 230, 40);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -200,6 +215,10 @@ public class CadastroMorador extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void jtfSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSobrenomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfSobrenomeActionPerformed
 
     
     /**
@@ -251,8 +270,10 @@ public class CadastroMorador extends javax.swing.JFrame {
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSaldo;
     public static org.edisoncor.gui.passwordField.PasswordFieldRectBackground jtfSenha;
     public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome;
+    public static org.edisoncor.gui.textField.TextFieldRectBackground jtfSobrenome1;
     private org.edisoncor.gui.label.LabelRound labelRound1;
     public static org.edisoncor.gui.label.LabelHeader labelSaldo;
+    public static org.edisoncor.gui.label.LabelHeader labelSaldo1;
     private org.edisoncor.gui.panel.PanelImage panelImage1;
     public static org.edisoncor.gui.panel.PanelNice panelNice5;
     private org.edisoncor.gui.panel.PanelNice panelNice6;
