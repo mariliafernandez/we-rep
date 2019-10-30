@@ -25,7 +25,7 @@ public class WeRep {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
         
-        Republica rep = new Republica(3,"Area 14","Francisco Reghin",242,"Seugling","Cornelio Procopio","PR");
+      /*  Republica rep = new Republica(3,"Area 14","Francisco Reghin",242,"Seugling","Cornelio Procopio","PR");
      
         RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
         
@@ -39,7 +39,36 @@ public class WeRep {
        
        moradorJpaController.create(mor);
        
-       System.out.println("Morador cadastrado!");
+       System.out.println("Morador cadastrado!");*/
+      
+      /*
+      Republica rep = new Republica();
+        
+      RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
+      
+      rep = republicaJpaController.findRepublica(1);
+      
+      System.out.println(rep.getNome());
+      
+      Morador mor = new Morador();
+      
+      MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
+      
+      mor = moradorJpaController.findMorador(1);
+      
+      System.out.println(mor.getNome()+" "+mor.getSobreNome());
+      
+      mor.setSobreNome("Queiroz");
+      
+      try{
+        moradorJpaController.edit(mor);
+      }
+      catch(Exception e){
+          System.out.println("Erro");
+      }
+      
+      System.out.println(mor.getNome()+" "+mor.getSobreNome());
+    */
     }
     
 }
