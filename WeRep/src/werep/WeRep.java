@@ -5,7 +5,9 @@
  */
 package werep;
 
+import Controller.MoradorJpaController;
 import Controller.RepublicaJpaController;
+import Model.Morador;
 import Model.Republica;
 import javax.persistence.Entity;
 import javax.persistence.EntityManagerFactory;
@@ -23,14 +25,21 @@ public class WeRep {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
         
-        Republica rep = new Republica(1,"Cuecas de Fogo","Francisco Reghin",242,"Seugling","Cornelio Procopio","PR");
+        Republica rep = new Republica(3,"Area 14","Francisco Reghin",242,"Seugling","Cornelio Procopio","PR");
      
-        RepublicaJpaController republicaJpaController = new RepublicaJpaController();
+        RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
         
         republicaJpaController.create(rep);
  
         System.out.println("Republica cadastrada!");
         
+        Morador mor = new Morador(1,10.00,"Alvaro","Pedroso Queiroz","alvaropq1@hotmail.com","alvaropq","bmprlb85",rep);
+       
+       MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
+       
+       moradorJpaController.create(mor);
+       
+       System.out.println("Morador cadastrado!");
     }
     
 }

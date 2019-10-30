@@ -55,7 +55,7 @@ public class MoradorJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Long id = morador.getId();
+                int id = morador.getId();
                 if (findMorador(id) == null) {
                     throw new NonexistentEntityException("The morador with id " + id + " no longer exists.");
                 }
@@ -113,7 +113,7 @@ public class MoradorJpaController implements Serializable {
         }
     }
 
-    public Morador findMorador(Long id) {
+    public Morador findMorador(int id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Morador.class, id);

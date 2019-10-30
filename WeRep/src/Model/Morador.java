@@ -23,7 +23,7 @@ public class Morador implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     private Double saldo;
     @Column(length = 50)
     private String nome;
@@ -37,7 +37,7 @@ public class Morador implements Serializable {
     private String senha;
     private Republica republica;
 
-    public Morador(Long id, Double saldo, String nome, String sobreNome, String email, String login, String senha, Republica republica) {
+    public Morador(int id, Double saldo, String nome, String sobreNome, String email, String login, String senha, Republica republica) {
         this.id = id;
         this.saldo = saldo;
         this.nome = nome;
@@ -48,7 +48,9 @@ public class Morador implements Serializable {
         this.republica = republica;
     }
 
-    
+    public Morador() {
+        super();
+    }
     
     @Override
     public int hashCode() {
@@ -105,11 +107,11 @@ public class Morador implements Serializable {
 
     
     
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
