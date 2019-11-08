@@ -224,25 +224,17 @@ public class CadastroMorador extends javax.swing.JFrame {
         morador.setLogin(jtfLogin.getText());
         morador.setSenha(jtfSenha1.getText());
         morador.setSaldo(Double.parseDouble(jtfSaldo.getText()));
+        
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
         RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
         MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
-        System.out.println(aux);
-        
         rep = republicaJpaController.encontraRep(aux);
         
-        System.out.println(rep.getNome());
-        
         morador.setRepublica(rep);
-        
-        
        
        moradorJpaController.create(morador);
-       
-       System.out.println("Morador cadastrado!");
- 
         
-        
+         JOptionPane.showMessageDialog(null,"Morador cadastrado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
