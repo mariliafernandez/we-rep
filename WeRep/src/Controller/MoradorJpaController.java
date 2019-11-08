@@ -8,6 +8,7 @@ package Controller;
 import Controller.exceptions.NonexistentEntityException;
 import Model.Morador;
 import java.io.Serializable;
+import java.sql.ResultSet;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -133,6 +134,21 @@ public class MoradorJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public Morador login(Morador morador) {
+        EntityManager em = getEntityManager();
+        
+        String sql = "Select login,senha FROM Morador where login = '" + morador.getLogin() + "' and senha = '" + morador.getSenha() + "';";
+        Query q = em.createNativeQuery(sql);
+        List<Object[]> result = q.getResultList();
+        Morador usuario = new Morador();
+        for (Object[] a : result) {
+         usuario.setLogin((String) a[0]);
+         usuario.setSenha((String) a[1]);
+       }
+        return usuario;
+
     }
     
 }

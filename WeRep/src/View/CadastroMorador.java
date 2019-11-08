@@ -6,7 +6,13 @@
 package View;
 
 
+import Controller.MoradorJpaController;
+import Controller.RepublicaJpaController;
+import Model.Morador;
+import Model.Republica;
 import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -22,8 +28,21 @@ public class CadastroMorador extends javax.swing.JFrame {
      */
     public CadastroMorador() {
         initComponents();
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
+        
+        RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
+        
+        List<Republica> result = republicaJpaController.findRepublicaEntities();
+        
+        for (Republica a : result) {
+         jComboBox1.addItem(a.toString());
         setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/imagens/repme.png")).getImage());
+        
+        
+         
+       }
+        
 
     }
 
@@ -55,7 +74,7 @@ public class CadastroMorador extends javax.swing.JFrame {
         labelSaldo1 = new org.edisoncor.gui.label.LabelHeader();
         jtfSenha1 = new org.edisoncor.gui.passwordField.PasswordFieldRectBackground();
         jtfSobrenome2 = new org.edisoncor.gui.textField.TextFieldRectBackground();
-        comboBoxRect2 = new org.edisoncor.gui.comboBox.ComboBoxRect();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -157,8 +176,9 @@ public class CadastroMorador extends javax.swing.JFrame {
         jtfSobrenome2.setDescripcion("Sobrenome");
         panelNice5.add(jtfSobrenome2);
         jtfSobrenome2.setBounds(240, 70, 230, 40);
-        panelNice5.add(comboBoxRect2);
-        comboBoxRect2.setBounds(310, 320, 140, 20);
+
+        panelNice5.add(jComboBox1);
+        jComboBox1.setBounds(300, 330, 170, 20);
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -194,7 +214,36 @@ public class CadastroMorador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-
+        Morador morador = new Morador();
+        Republica rep = new Republica();
+     
+        String aux = (String) jComboBox1.getSelectedItem();
+        morador.setNome(jtfNome.getText());
+        morador.setSobreNome(jtfSobrenome2.getText());
+        morador.setEmail(jtfEmail.getText());
+        morador.setLogin(jtfLogin.getText());
+        morador.setSenha(jtfSenha1.getText());
+        morador.setSaldo(Double.parseDouble(jtfSaldo.getText()));
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
+        RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
+        MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
+        System.out.println(aux);
+        
+        rep = republicaJpaController.encontraRep(aux);
+        
+        System.out.println(rep.getNome());
+        
+        morador.setRepublica(rep);
+        
+        
+       
+       moradorJpaController.create(morador);
+       
+       System.out.println("Morador cadastrado!");
+ 
+        
+        
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void jtfSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSaldoActionPerformed
@@ -235,7 +284,7 @@ public class CadastroMorador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new CadastroMorador().setVisible(true);
+                new CadastroMorador().setVisible(true);
             }
         });
     }
@@ -244,7 +293,7 @@ public class CadastroMorador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static org.edisoncor.gui.button.ButtonAeroRound btnAlterar;
     public static org.edisoncor.gui.button.ButtonAeroRound btnCadastrar;
-    private org.edisoncor.gui.comboBox.ComboBoxRect comboBoxRect2;
+    private javax.swing.JComboBox<String> jComboBox1;
     public static javax.swing.JLabel jlblLogin;
     public static javax.swing.JLabel jlblSenha;
     private javax.swing.JLabel jlblUser2;

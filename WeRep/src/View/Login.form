@@ -108,12 +108,12 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/imagens/user2.png"/>
+              <Image iconType="3" name="/imagens/password2.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="280" y="230" width="30" height="30"/>
+              <AbsoluteConstraints x="280" y="280" width="30" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -145,7 +145,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/imagens/Anota&#xe7;&#xe3;o 2019-09-28 092152.png"/>
+              <Image iconType="3" name="/imagens/Anota&#xe7;&#xe3;o 2019-09-28 092152.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -156,7 +156,7 @@
         </Component>
         <Component class="org.edisoncor.gui.passwordField.PasswordFieldRoundBackground" name="jtfSenha">
           <Properties>
-            <Property name="text" type="java.lang.String" value="passwordFieldRoundBackground1"/>
+            <Property name="descripcion" type="java.lang.String" value=" " noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfSenhaActionPerformed"/>
@@ -164,6 +164,18 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="320" y="280" width="170" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/user2.png"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="280" y="230" width="30" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

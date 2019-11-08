@@ -5,6 +5,13 @@
  */
 package View;
 
+import Controller.MoradorJpaController;
+import Controller.RepublicaJpaController;
+import Model.Morador;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Angelo
@@ -35,6 +42,7 @@ public class Login extends javax.swing.JFrame {
         buttonRound1 = new org.edisoncor.gui.button.ButtonRound();
         jLabel3 = new javax.swing.JLabel();
         jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRoundBackground();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,11 +70,11 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/password2.png"))); // NOI18N
         panelImage2.add(jLabel1);
-        jLabel1.setBounds(280, 270, 30, 40);
+        jLabel1.setBounds(280, 270, 0, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/user2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/password2.png"))); // NOI18N
         panelImage2.add(jLabel2);
-        jLabel2.setBounds(280, 230, 30, 30);
+        jLabel2.setBounds(280, 280, 30, 30);
 
         buttonRound1.setBackground(new java.awt.Color(255, 255, 255));
         buttonRound1.setForeground(new java.awt.Color(0, 0, 0));
@@ -81,11 +89,11 @@ public class Login extends javax.swing.JFrame {
         panelImage2.add(buttonRound1);
         buttonRound1.setBounds(230, 390, 300, 20);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/Anotação 2019-09-28 092152.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Anotação 2019-09-28 092152.png"))); // NOI18N
         panelImage2.add(jLabel3);
         jLabel3.setBounds(260, 60, 230, 140);
 
-        jtfSenha.setText("passwordFieldRoundBackground1");
+        jtfSenha.setDescripcion(" "); // NOI18N
         jtfSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfSenhaActionPerformed(evt);
@@ -93,6 +101,10 @@ public class Login extends javax.swing.JFrame {
         });
         panelImage2.add(jtfSenha);
         jtfSenha.setBounds(320, 280, 170, 30);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user2.png"))); // NOI18N
+        panelImage2.add(jLabel4);
+        jLabel4.setBounds(280, 230, 30, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +127,25 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAcessoActionPerformed
- 
+            Morador morador = new Morador();
+
+        morador.setLogin(jtfLogin.getText());
+        morador.setSenha(jtfSenha.getText());
+        Morador usuario = new Morador();
+        
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
+        
+        MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
+        morador = moradorJpaController.login(morador);
+        
+        if(morador.getLogin() != null){
+            JOptionPane.showMessageDialog(null,"Login realizado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null,"Erro! Usuario e/ou senha inválidos!","Erro",JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_jBtnAcessoActionPerformed
 
     private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
@@ -167,6 +197,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private org.edisoncor.gui.textField.TextFieldRoundIcon jtfLogin;
     private org.edisoncor.gui.passwordField.PasswordFieldRoundBackground jtfSenha;
     private org.edisoncor.gui.panel.PanelImage panelImage2;

@@ -6,6 +6,7 @@
 package Controller;
 
 import Controller.exceptions.NonexistentEntityException;
+import Model.Morador;
 import Model.Republica;
 import java.io.Serializable;
 import java.util.List;
@@ -137,6 +138,26 @@ public class RepublicaJpaController implements Serializable {
         } finally {
             em.close();
         }
+    }
+
+public Republica encontraRep(String rep) {
+        EntityManager em = getEntityManager();
+        
+        String sql = "Select * FROM Republica where nome = '" + rep + "';";
+        Query q = em.createNativeQuery(sql);
+        List<Object[]> result = q.getResultList();
+        Republica republica = new Republica();
+        for (Object[] a : result) {
+         republica.setId((int) a[0]);
+         republica.setNome((String) a[1]);
+         republica.setEndereco((String) a[2]);
+         republica.setNumero((int) a[3]);
+         republica.setBairro((String) a[4]);
+         republica.setCidade((String) a[5]);
+         republica.setEstado((String) a[6]);
+       }
+        return republica;
+
     }
     
 }

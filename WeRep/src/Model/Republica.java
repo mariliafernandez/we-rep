@@ -125,6 +125,10 @@ public class Republica implements Serializable {
         return numero;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public void setNumero(int numero) {
         this.numero = numero;
     }
@@ -155,7 +159,7 @@ public class Republica implements Serializable {
 
     @Override
     public String toString() {
-        return "Republica{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + '}';
+        return getNome();
     }
 
 
