@@ -46,10 +46,16 @@ public class Valida {
         else throw new Exception("Campo excede o tamanho");
     }
     
-    public boolean validaNumero(int campo) throws Exception{
+    public boolean validaNumeroMax(int campo) throws Exception{
         if(campo < 9999)
             return true;
         else throw new Exception("Campo excede o tamanho");
+    }
+    
+    public boolean validaNumeroMin(int campo) throws Exception{
+        if(campo > 0)
+            return true;
+        else throw new Exception("Campo muito pequeno");
     }
     
     public boolean validaTamBairro(String campo) throws Exception{
@@ -77,7 +83,8 @@ public class Valida {
 	validaTamMax(rep.getBairro());
 	validaTamMax(rep.getCidade());
 	validaTamMax(rep.getEstado());
-        validaNumero(rep.getNumero());
+        validaNumeroMax(rep.getNumero());
+        validaNumeroMin(rep.getNumero());
 
         validaTamMin(rep.getNome());
 	validaTamMin(rep.getEndereco());
@@ -93,13 +100,11 @@ public class Valida {
 	validaNull(morador.getEmail());
 	validaNull(morador.getLogin());
 	validaNull(morador.getSenha());
-	validaNull(morador.getRepublica().toString());
 
 	validaTamMax(morador.getNome());
 	validaTamMax(morador.getSobreNome());
 	validaTamMax(morador.getEmail());
 	validaTamMax(morador.getLogin());
-	validaTamMax(morador.getRepublica().toString());
         validaTamMaxSenha(morador.getSenha());
 
 	validaTamMin(morador.getNome());
@@ -107,7 +112,6 @@ public class Valida {
 	validaTamMin(morador.getEmail());
 	validaTamMin(morador.getLogin());
 	validaTamMin(morador.getSenha());
-	validaTamMin(morador.getRepublica().toString());
 
 	validaSimb(morador.getNome());
 	validaSimb(morador.getSobreNome());

@@ -90,12 +90,12 @@ public class ValidaTest {
     }
     
     @Test
-    public void testSenhaNula() throws Exception {
+    public void testSenhaNulo() throws Exception {
         Morador morador;
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Maria", "Silva", "", "maria.silva", "", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva123@gmai.com", "maria.silva", "", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {
@@ -104,16 +104,16 @@ public class ValidaTest {
     }
     
     @Test
-    public void testRepublicaNula() throws Exception {
+    public void testRepNulo() throws Exception {
         Morador morador;
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Maria", "Silva", "", "maria.silva", "", null);
+            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva123@gmai.com", "maria.silva", "senha123", null);
             instance.validaMorador(morador);
-            fail();
+            
         } catch(Exception e) {
-            assertEquals("Campo Nulo", e.getMessage());
+            fail(e.getMessage());
         }  
     }
     
@@ -151,7 +151,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Mari", "Silva", "maria.silva.gmail.com", "m.s", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva.gmail.com", "m.s", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {
@@ -165,7 +165,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Mari", "Silva", "maria.silva.gmail.com", "maria.silva", "1234", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva.gmail.com", "maria.silva", "1234", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {
@@ -277,7 +277,6 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
             rep = new Republica(0, "República X", "Rua XV de Novembro", 1202, "Centro", "Cornélio Procópio", "PR");
             instance.validaRepublica(rep);
             
@@ -287,17 +286,74 @@ public class ValidaTest {
     }
     
     @Test
-    public void testNomeRepPequeno() throws Exception {
+    public void testNomeRepNulo() throws Exception {
         Republica rep;
         Valida instance = new Valida();
         
         try {
             //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
-            rep = new Republica(0, "Repu", "XV de Novembro", 1202, "Centro", "Cornélio Procópio", "PR");
+            rep = new Republica(0, "", "XV de Novembro", 1202, "Centro", "Cornélio Procópio", "PR");
             instance.validaRepublica(rep);
             fail();
         } catch(Exception e) {
-            assertEquals("Campo muito pequeno", e.getMessage());
+            assertEquals("Campo Nulo", e.getMessage());
+        }  
+    }
+   
+    @Test
+    public void testEnderecoNulo() throws Exception {
+        Republica rep;
+        Valida instance = new Valida();
+        
+        try {
+            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
+            rep = new Republica(0, "República X", "", 1202, "Centro", "Cornélio Procópio", "PR");
+            instance.validaRepublica(rep);
+            fail();
+        } catch(Exception e) {
+            assertEquals("Campo Nulo", e.getMessage());
+        }  
+    }
+    
+    @Test
+    public void testBairroNulo() throws Exception {
+        Republica rep;
+        Valida instance = new Valida();
+        
+        try {
+            rep = new Republica(0, "República X", "XV de Novembro", 1202, "", "Cornélio Procópio", "PR");
+            instance.validaRepublica(rep);
+            fail();
+        } catch(Exception e) {
+            assertEquals("Campo Nulo", e.getMessage());
+        }  
+    }
+    
+    @Test
+    public void testCidadeNulo() throws Exception {
+        Republica rep;
+        Valida instance = new Valida();
+        
+        try {
+            rep = new Republica(0, "República X", "XV de Novembro", 1202, "Centro", "", "PR");
+            instance.validaRepublica(rep);
+            fail();
+        } catch(Exception e) {
+            assertEquals("Campo Nulo", e.getMessage());
+        }  
+    }
+    
+    @Test
+    public void testEstadoNulo() throws Exception {
+        Republica rep;
+        Valida instance = new Valida();
+        
+        try {
+            rep = new Republica(0, "República X", "XV de Novembro", 1202, "Centro", "Cornélio Procópio", "");
+            instance.validaRepublica(rep);
+            fail();
+        } catch(Exception e) {
+            assertEquals("Campo Nulo", e.getMessage());
         }  
     }
     
@@ -307,7 +363,6 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
             rep = new Republica(0, "Republica X", "XV", 1202, "Centro", "Cornélio Procópio", "PR");
             instance.validaRepublica(rep);
             fail();
@@ -322,12 +377,25 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
-            rep = new Republica(0, "Republica X", "XV", 0, "Centro", "Cornélio Procópio", "PR");
+            rep = new Republica(0, "Republica X", "XV de Novembro", 0, "Centro", "Cornélio Procópio", "PR");
             instance.validaRepublica(rep);
             fail();
         } catch(Exception e) {
             assertEquals("Campo muito pequeno", e.getMessage());
+        }  
+    }
+    
+    @Test
+    public void testNumeroGrande() throws Exception {
+        Republica rep;
+        Valida instance = new Valida();
+        
+        try {
+            rep = new Republica(0, "Republica X", "XV de Novembro", 9999, "Centro", "Cornélio Procópio", "PR");
+            instance.validaRepublica(rep);
+            fail();
+        } catch(Exception e) {
+            assertEquals("Campo excede o tamanho", e.getMessage());
         }  
     }
     
@@ -337,8 +405,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
-            rep = new Republica(0, "Republica X", "XV", 1202, "A", "Cornélio Procópio", "PR");
+            rep = new Republica(0, "Republica X", "XV de Novembro", 1202, "A", "Cornélio Procópio", "PR");
             instance.validaRepublica(rep);
             fail();
         } catch(Exception e) {
@@ -352,8 +419,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
-            rep = new Republica(0, "Republica X", "XV", 1202, "A", "CP", "PR");
+            rep = new Republica(0, "Republica X", "XV de Novembro", 1202, "Centro", "CP", "PR");
             instance.validaRepublica(rep);
             fail();
         } catch(Exception e) {
@@ -367,8 +433,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            //int id, String nome, String endereco, int numero, String bairro, String cidade, String estado
-            rep = new Republica(0, "Republica X", "XV", 1202, "Centro", "Cornélio Procópio", "P");
+            rep = new Republica(0, "Republica X", "XV de Novembro", 1202, "Centro", "Cornélio Procópio", "P");
             instance.validaRepublica(rep);
             fail();
         } catch(Exception e) {
