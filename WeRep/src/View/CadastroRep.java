@@ -7,6 +7,7 @@ package view;
 
 import Controller.RepublicaJpaController;
 import Model.Republica;
+import View.Valida;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
@@ -301,13 +302,24 @@ public class CadastroRep extends javax.swing.JFrame {
         rep.setEstado(jtfEstado.getText());
         rep.setBairro(jtfBairro.getText());
         
-        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
+        Valida valida = new Valida();
         
-        RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
+        try {
+            valida.validaRepublica(rep);
+            
+            EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
         
-        republicaJpaController.create(rep);
- 
-        JOptionPane.showMessageDialog(null,"República cadastrada com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+            RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
+
+            republicaJpaController.create(rep);
+
+            JOptionPane.showMessageDialog(null,"República cadastrada com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+            
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        
        
     }//GEN-LAST:event_jBtnCadastrarRepActionPerformed
 
