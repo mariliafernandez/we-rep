@@ -39,16 +39,16 @@ public class Login extends javax.swing.JFrame {
         jBtnAcesso = new org.edisoncor.gui.button.ButtonSeven();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        buttonRound1 = new org.edisoncor.gui.button.ButtonRound();
         jLabel3 = new javax.swing.JLabel();
         jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRoundBackground();
         jLabel4 = new javax.swing.JLabel();
+        buttonRound2 = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelImage2.setBackground(new java.awt.Color(255, 0, 0));
         panelImage2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/bg.png"))); // NOI18N
+        panelImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bg.png")));
         panelImage2.setMinimumSize(new java.awt.Dimension(630, 450));
         panelImage2.setLayout(null);
 
@@ -68,26 +68,13 @@ public class Login extends javax.swing.JFrame {
         panelImage2.add(jBtnAcesso);
         jBtnAcesso.setBounds(290, 330, 170, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imagens/password2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/password2.png")));
         panelImage2.add(jLabel1);
         jLabel1.setBounds(280, 270, 0, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/password2.png"))); // NOI18N
         panelImage2.add(jLabel2);
         jLabel2.setBounds(280, 280, 30, 30);
-
-        buttonRound1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonRound1.setForeground(new java.awt.Color(0, 0, 0));
-        buttonRound1.setText("Cadastrar-se");
-        buttonRound1.setColorDeSombra(new java.awt.Color(255, 255, 255));
-        buttonRound1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        buttonRound1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRound1ActionPerformed(evt);
-            }
-        });
-        panelImage2.add(buttonRound1);
-        buttonRound1.setBounds(230, 390, 300, 20);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Anotação 2019-09-28 092152.png"))); // NOI18N
         panelImage2.add(jLabel3);
@@ -105,6 +92,19 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/user2.png"))); // NOI18N
         panelImage2.add(jLabel4);
         jLabel4.setBounds(280, 230, 30, 30);
+
+        buttonRound2.setBackground(new java.awt.Color(255, 255, 255));
+        buttonRound2.setForeground(new java.awt.Color(0, 0, 0));
+        buttonRound2.setText("Cadastrar-se");
+        buttonRound2.setColorDeSombra(new java.awt.Color(255, 255, 255));
+        buttonRound2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        buttonRound2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRound2ActionPerformed(evt);
+            }
+        });
+        panelImage2.add(buttonRound2);
+        buttonRound2.setBounds(230, 390, 300, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +128,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jBtnAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAcessoActionPerformed
             Morador morador = new Morador();
+            Menu menu = new Menu();
 
         morador.setLogin(jtfLogin.getText());
         morador.setSenha(jtfSenha.getText());
@@ -140,6 +141,7 @@ public class Login extends javax.swing.JFrame {
         
         if(morador.getLogin() != null){
             JOptionPane.showMessageDialog(null,"Login realizado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+            menu.setVisible(true);
         }
         
         else{
@@ -148,12 +150,15 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBtnAcessoActionPerformed
 
-    private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
-    }//GEN-LAST:event_buttonRound1ActionPerformed
-
     private void jtfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfSenhaActionPerformed
+
+    private void buttonRound2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound2ActionPerformed
+        // TODO add your handling code here:
+        CadastroMorador novomorador = new CadastroMorador(); 
+        novomorador.setVisible(true);
+    }//GEN-LAST:event_buttonRound2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,7 +197,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.edisoncor.gui.button.ButtonRound buttonRound1;
+    private org.edisoncor.gui.button.ButtonRound buttonRound2;
     private org.edisoncor.gui.button.ButtonSeven jBtnAcesso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
