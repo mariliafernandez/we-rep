@@ -128,6 +128,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jBtnAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAcessoActionPerformed
             Morador morador = new Morador();
+            Menu menu = new Menu();
 
         morador.setLogin(jtfLogin.getText());
         morador.setSenha(jtfSenha.getText());
@@ -140,6 +141,7 @@ public class Login extends javax.swing.JFrame {
         
         if(morador.getLogin() != null){
             JOptionPane.showMessageDialog(null,"Login realizado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+            menu.setVisible(true);
         }
         
         else{

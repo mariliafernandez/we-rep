@@ -154,6 +154,11 @@ public class Menu extends javax.swing.JFrame {
         clockFace1.setBounds(370, 40, 150, 150);
 
         buttonTransluceIcon1.setText("buttonTransluceIcon1");
+        buttonTransluceIcon1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonTransluceIcon1ActionPerformed(evt);
+            }
+        });
         panelNice5.add(buttonTransluceIcon1);
         buttonTransluceIcon1.setBounds(20, 225, 185, 40);
 
@@ -199,6 +204,10 @@ public class Menu extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
        
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void buttonTransluceIcon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTransluceIcon1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonTransluceIcon1ActionPerformed
 
     /**
      * @param args the command line arguments
