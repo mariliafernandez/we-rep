@@ -44,9 +44,13 @@ public class LoginTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
+        try{
         Login.main(args);
+        }catch(Exception e){
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        }
+        
     }
     
 }

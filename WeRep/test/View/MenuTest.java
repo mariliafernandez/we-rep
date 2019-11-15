@@ -45,10 +45,14 @@ public class MenuTest {
         System.out.println("getHora");
         Menu instance = new Menu();
         String expResult = "";
+        try{
+        
         String result = instance.getHora();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("11", result);   
+        }
+        catch(Exception e){
+           fail("The test case is a prototype."); 
+        }
     }
 
     /**
@@ -58,9 +62,14 @@ public class MenuTest {
     public void testSaudacao() {
         System.out.println("saudacao");
         Menu instance = new Menu();
-        instance.saudacao();
+        try{
+         instance.saudacao();   
+        }
+        catch(Exception e){
+           fail("The test case is a prototype."); 
+        }
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -70,9 +79,12 @@ public class MenuTest {
     public void testSetSaldo() {
         System.out.println("setSaldo");
         Menu instance = new Menu();
-        instance.setSaldo();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try{
+         instance.setSaldo();   
+        }
+        catch(Exception e){
+           fail("The test case is a prototype."); 
+        }
     }
 
     /**
@@ -82,9 +94,14 @@ public class MenuTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        Menu.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try{
+        Menu.main(args);   
+        }
+        catch(Exception e){
+           fail("The test case is a prototype."); 
+        }
+        
+
     }
     
 }
