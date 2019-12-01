@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class MenuTest {
+public class MenuT {
     
-    public MenuTest() {
+    public MenuT() {
     }
     
     @BeforeClass

@@ -64,7 +64,7 @@ public class Republica implements Serializable {
         return hash;
     }
 
-    @Override
+   /* @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -99,7 +99,7 @@ public class Republica implements Serializable {
         }
         return true;
     }
-    
+    */
     public int getId() {
         return id;
         

@@ -12,6 +12,7 @@ import Model.Republica;
 import javax.persistence.Entity;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import View.Login;
 
 /**
  *
@@ -69,6 +70,8 @@ public class WeRep {
       
       System.out.println(mor.getNome()+" "+mor.getSobreNome());
     */
+     Login login = new Login();
+     login.main(args);
     }
     
 }

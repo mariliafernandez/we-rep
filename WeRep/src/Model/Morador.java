@@ -66,7 +66,7 @@ public class Morador implements Serializable {
         return hash;
     }
 
-    @Override
+ /*   @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -105,7 +105,7 @@ public class Morador implements Serializable {
         return true;
     }
 
-    
+*/    
     
     public int getId() {
         return id;

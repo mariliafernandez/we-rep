@@ -20,7 +20,7 @@ public class Valida {
     }
 
     public boolean validaTamMin(String campo) throws Exception{
-	if (campo.length() < 5){
+	if (campo.length() < 4){
             throw new Exception("Campo muito pequeno");
 	}
         else return true;

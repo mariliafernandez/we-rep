@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package view;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class LoginTest {
+public class CadastroRepT {
     
-    public LoginTest() {
+    public CadastroRepT() {
     }
     
     @BeforeClass
@@ -38,19 +38,8 @@ public class LoginTest {
     }
 
     /**
-     * Test of main method, of class Login.
+     * Test of main method, of class CadastroRep.
      */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        try{
-        Login.main(args);
-        }catch(Exception e){
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        }
-        
-    }
+    
     
 }

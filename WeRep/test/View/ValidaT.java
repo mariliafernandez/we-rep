@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class ValidaTest {
+public class ValidaT {
     
     @Test
     public void testMorador() throws Exception {
@@ -123,7 +123,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Mari", "Silva", "maria.silva.gmail.com", "maria.silva", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "M", "Silva", "maria.silva@gmail.com", "maria.silva", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {
@@ -137,7 +137,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Maria", "Silv", "maria.silva.gmail.com", "maria.silva", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "Maria", "S", "maria.silva@gmail.com", "maria.silva", "maria123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {
@@ -165,7 +165,7 @@ public class ValidaTest {
         Valida instance = new Valida();
         
         try {
-            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva.gmail.com", "maria.silva", "1234", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
+            morador = new Morador(0, 200.00, "Maria", "Silva", "maria.silva@gmail.com", "maria.silva", "123", new Republica(0, "Rep10", "Rua XV de Novembro", 1230, "Centro", "Cornélio Procópio", "Paraná"));
             instance.validaMorador(morador);
             fail();
         } catch(Exception e) {

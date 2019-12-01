@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package View;
 
 import Controller.RepublicaJpaController;
 import Model.Republica;
@@ -301,6 +301,7 @@ public class CadastroRep extends javax.swing.JFrame {
         rep.setCidade(jtfCidade.getText());
         rep.setEstado(jtfEstado.getText());
         rep.setBairro(jtfBairro.getText());
+        rep.setNumero(Integer.parseInt(jtfNumero.getText()));
         
         Valida valida = new Valida();
         
@@ -314,7 +315,7 @@ public class CadastroRep extends javax.swing.JFrame {
             republicaJpaController.create(rep);
 
             JOptionPane.showMessageDialog(null,"República cadastrada com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
-            
+            setVisible(false);
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }

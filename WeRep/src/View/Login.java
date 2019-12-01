@@ -11,6 +11,7 @@ import Model.Morador;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
+import View.CadastroRep;
 
 /**
  *
@@ -43,6 +44,7 @@ public class Login extends javax.swing.JFrame {
         jtfSenha = new org.edisoncor.gui.passwordField.PasswordFieldRoundBackground();
         jLabel4 = new javax.swing.JLabel();
         buttonRound2 = new org.edisoncor.gui.button.ButtonRound();
+        buttonRound3 = new org.edisoncor.gui.button.ButtonRound();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,7 +106,20 @@ public class Login extends javax.swing.JFrame {
             }
         });
         panelImage2.add(buttonRound2);
-        buttonRound2.setBounds(230, 390, 300, 20);
+        buttonRound2.setBounds(230, 420, 300, 20);
+
+        buttonRound3.setBackground(new java.awt.Color(255, 255, 255));
+        buttonRound3.setForeground(new java.awt.Color(0, 0, 0));
+        buttonRound3.setText("Cadastrar República");
+        buttonRound3.setColorDeSombra(new java.awt.Color(255, 255, 255));
+        buttonRound3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        buttonRound3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRound3ActionPerformed(evt);
+            }
+        });
+        panelImage2.add(buttonRound3);
+        buttonRound3.setBounds(230, 390, 300, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,6 +175,13 @@ public class Login extends javax.swing.JFrame {
         novomorador.setVisible(true);
     }//GEN-LAST:event_buttonRound2ActionPerformed
 
+    private void buttonRound3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound3ActionPerformed
+
+        CadastroRep cadastroRep = new CadastroRep();
+        cadastroRep.setVisible(true);
+        
+    }//GEN-LAST:event_buttonRound3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,6 +220,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.edisoncor.gui.button.ButtonRound buttonRound2;
+    private org.edisoncor.gui.button.ButtonRound buttonRound3;
     private org.edisoncor.gui.button.ButtonSeven jBtnAcesso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

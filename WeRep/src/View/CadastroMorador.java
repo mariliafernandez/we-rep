@@ -227,10 +227,10 @@ public class CadastroMorador extends javax.swing.JFrame {
         
         Valida valida = new Valida();
         try {
-            System.out.println("a");
+            //System.out.println("a");
             valida.validaMorador(morador);
             
-            System.out.println("b");
+            //System.out.println("b");
             EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("WeRepPU2");
             RepublicaJpaController republicaJpaController = new RepublicaJpaController(entityManagerFactory);
             MoradorJpaController moradorJpaController = new MoradorJpaController(entityManagerFactory);
@@ -241,6 +241,7 @@ public class CadastroMorador extends javax.swing.JFrame {
             moradorJpaController.create(morador);
 
             JOptionPane.showMessageDialog(null,"Morador cadastrado com sucesso!","Aviso",JOptionPane.INFORMATION_MESSAGE);
+            setVisible(false);
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }
