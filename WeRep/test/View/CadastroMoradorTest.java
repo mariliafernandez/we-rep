@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class CadastroMoradorT {
+public class CadastroMoradorTest {
     
-    public CadastroMoradorT() {
+    public CadastroMoradorTest() {
     }
     
     @BeforeClass

@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class ValidaT {
+public class ValidaTest {
     
     @Test
     public void testMorador() throws Exception {

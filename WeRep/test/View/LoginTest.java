@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author marilia
  */
-public class LoginT {
+public class LoginTest {
     
-    public LoginT() {
+    public LoginTest() {
     }
     
     @BeforeClass
